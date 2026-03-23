@@ -1,0 +1,170 @@
+:root{
+  --bg1:#0b1220;
+  --bg2:#101a33;
+  --accent:#7c5cff;
+  --accent2:#2de2e6;
+  --text:#eaf0ff;
+  --muted:rgba(234,240,255,.72);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color:#111;
+  background:#f3f4f6;
+  overflow:hidden;
+}
+
+.app{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  opacity:0;
+  transform: translateY(8px);
+  transition: opacity .5s ease, transform .5s ease;
+  padding:24px;
+}
+
+.app.ready{
+  opacity:1;
+  transform:none;
+}
+
+.app__inner{
+  max-width:680px;
+  text-align:center;
+}
+
+.app__inner h1{
+  margin:0 0 10px;
+  font-size:32px;
+  letter-spacing:.2px;
+}
+
+.app__inner p{
+  margin:0;
+  color:#4b5563;
+}
+
+.preloader{
+  position:fixed;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  z-index:9999;
+  transition: opacity .35s ease, visibility .35s ease;
+  background:#f3f4f6;
+}
+
+.preloader.hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.card{
+  width:min(420px, 92vw);
+  border-radius:12px;
+  padding:20px 18px 16px;
+  background:#fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0,0,0,.10);
+  position:relative;
+  overflow:hidden;
+}
+
+.shine{
+  display:none;
+}
+
+.content{
+  position:relative;
+  display:grid;
+  gap:14px;
+}
+
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.logo{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background:#111827;
+}
+
+.title{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+  min-width:0;
+}
+
+.title strong{
+  font-size:14px;
+  letter-spacing:.2px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.title span{
+  font-size:12px;
+  color:#6b7280;
+}
+
+.ring{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border: 3px solid #e5e7eb;
+  border-top-color:#111827;
+  animation: ring 1s linear infinite;
+}
+
+@keyframes ring{ to{ transform: rotate(360deg); } }
+
+.status{
+  font-size:13px;
+  color:#6b7280;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.bar{
+  height:10px;
+  border-radius:999px;
+  background:#f3f4f6;
+  border: 1px solid #e5e7eb;
+  overflow:hidden;
+}
+
+.bar > i{
+  display:block;
+  height:100%;
+  width:0%;
+  border-radius:999px;
+  background:#111827;
+  transition: width .18s ease;
+}
+
+.hint{
+  font-size:12px;
+  color:#9ca3af;
+}
