@@ -2,6 +2,8 @@
 
 # Loading Screen
 
+![demo-video](https://github.com/Abithodjaevumar/loading/blob/main/demonstration/2026-03-23%2012-31-43.mp4)
+
 Минималистичный загрузочный экран (preloader) на **HTML + CSS + JavaScript**.
 
 ## Возможности
